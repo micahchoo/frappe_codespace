@@ -1,9 +1,15 @@
-#!/bin/bash
+#!bin/bash
 
 set -e
 
-# Ensure we start fresh
-rm -rf /workspace/frappe-bench
+
+if [[ -f "/workspaces/frappe_codespace/frappe-bench/apps/frappe" ]]
+then
+    echo "Bench already exists, skipping init"
+    exit 0
+fi
+
+rm -rf /workspaces/frappe_codespace/.git
 
 # Set up Node.js and Yarn
 source /home/frappe/.nvm/nvm.sh
@@ -14,7 +20,6 @@ npm install -g yarn
 
 echo "nvm use 18" >> ~/.bashrc
 
-# Initialize the bench in the correct directory
 cd /workspace
 
 bench init \
