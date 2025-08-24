@@ -8,7 +8,7 @@ Setup happens in two steps -
 1. Github will first create a codespace
 2. Once the codespace is initialized (you will see VSCode UI) a script runs that will -
    1. Create a bench with Frappe develop branch and configure it
-   2. Create a new site called dev.localhost with the password `admin`
+   2. Create a new site called dev.localhost with the user `Administrator` the password `admin`
    3. Enables developer mode, sets dev.localhost as default site 
 
 # Features
